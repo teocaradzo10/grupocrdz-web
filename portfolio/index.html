@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio · Grupo CRDZ</title>
+<meta name="description" content="Trabajos de Grupo CRDZ: planos de fabricación, modelos 3D y planos de arquitectura. Caballito, CABA.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Portfolio · Grupo CRDZ">
+<meta property="og:description" content="Planos de fabricación, modelos 3D y planos de arquitectura.">
+<meta property="og:image" content="https://grupocrdz.com.ar/og-image.png">
+<meta property="og:url" content="https://grupocrdz.com.ar/portfolio/">
+<meta name="theme-color" content="#F4F2EE">
+<style>html{-webkit-text-size-adjust:100%} body{margin:0} img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: bloques de hormigón a canto vivo; una sola columna ancha con fichas técnicas; ladrillo solo en el botón de WhatsApp */
+:root{
+  --surface:#F4F2EE; --surface-alt:#E6E3DD; --hormigon:#9A9893; --hierro:#1C1C1B; --hierro-muted:#5A5854;
+  --ladrillo:#A4492E; --on-ladrillo:#FFFFFF; --linea:#CFCBC4; --bloque:#1C1C1B; --on-bloque:#F4F2EE; --tie:#1C1C1B;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif; --f-body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --s1:8px; --s2:16px; --s3:32px; --s4:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --surface:#161615; --surface-alt:#242422; --hormigon:#6F6D69; --hierro:#EEEBE6; --hierro-muted:#A9A59F;
+  --ladrillo:#D0694A; --on-ladrillo:#161615; --linea:#3A3936; --bloque:#2E2D2B; --on-bloque:#EEEBE6; --tie:#161615; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --surface:#161615; --surface-alt:#242422; --hormigon:#6F6D69; --hierro:#EEEBE6; --hierro-muted:#A9A59F;
+  --ladrillo:#D0694A; --on-ladrillo:#161615; --linea:#3A3936; --bloque:#2E2D2B; --on-bloque:#EEEBE6; --tie:#161615; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--surface);color:var(--hierro);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ladrillo);outline-offset:3px}
+.eti{font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hierro-muted)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+/* header */
+header.top{border-bottom:1px solid var(--linea)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);padding-block:var(--s2)}
+.logo{display:block;height:56px;width:auto}
+.lg-ink{fill:var(--hierro)} .lg-paper{fill:var(--surface)} .lg-muted{fill:var(--hierro-muted)}
+nav{display:flex;gap:var(--s3);flex-wrap:wrap}
+nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--hierro-muted)}
+nav a:hover{color:var(--hierro)}
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--s4);align-items:center;padding-block:var(--s4)}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;line-height:.95;letter-spacing:-.03em}
+.hero p.lead{font-size:19px;line-height:1.5;color:var(--hierro-muted);max-width:34em;margin:var(--s3) 0}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ladrillo);color:var(--on-ladrillo);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:2px;min-height:48px}
+.btn:hover{filter:brightness(1.08)}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.ghost{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border:1px solid var(--hierro);color:var(--hierro);text-decoration:none;font-weight:600;border-radius:2px}
+.ghost:hover{background:var(--surface-alt)}
+.more{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:var(--hierro)}
+.more:hover{color:var(--ladrillo)}
+.copy{font:inherit;font-size:14px;background:none;border:1px solid var(--linea);color:var(--hierro);padding:12px 16px;border-radius:2px;cursor:pointer;min-height:48px}
+.copy:hover{border-color:var(--hierro-muted)}
+/* hero composition: tabique con pasadores */
+.muro{position:relative;aspect-ratio:1/1;max-width:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));gap:12px}
+.b{background:var(--hormigon)}
+.b.a{grid-column:1/5;grid-row:1/6;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);place-items:center}
+.b.a i{width:12px;height:12px;border-radius:50%;background:var(--tie);opacity:.55}
+.b.o{grid-column:5/7;grid-row:2/5;background:var(--bloque)}
+.b.t{grid-column:5/7;grid-row:5/7;background:var(--surface-alt)}
+.b.l{grid-column:1/3;grid-row:6/7;background:var(--surface-alt)}
+.b.k{grid-column:3/5;grid-row:6/7;background:var(--hierro)}
+/* sections */
+section{padding-block:var(--s4);border-top:1px solid var(--linea)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s3)}
+.sec-head h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.lines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+.line{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.line-head{background:var(--bloque);color:var(--on-bloque);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s1)}
+.line-head h3{font-size:28px;font-weight:800;letter-spacing:-.01em}
+.line-head p{margin:0;color:inherit;opacity:.8;font-size:15px}
+table.precios{width:100%;border-collapse:collapse;font-size:15px}
+.precios th,.precios td{text-align:left;padding:12px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.precios th{font-weight:500;padding-right:0}
+.precios td{text-align:right;white-space:nowrap;padding-left:var(--s2);font-variant-numeric:tabular-nums;font-weight:600}
+.precios small{display:block;color:var(--hierro-muted);font-weight:400;font-size:13px;margin-top:2px}
+.nota{font-size:13px;color:var(--hierro-muted);margin:var(--s2) 0 0}
+/* trabajo */
+.obra{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s4);align-items:start}
+.lamina{margin:0;background:#F7F7F7;border:1px solid var(--linea);padding:var(--s2)}
+.lamina img{display:block;width:100%;height:auto}
+.lamina img.plano{margin-top:var(--s2);border:1px solid var(--linea)}
+.lamina figcaption{font-size:12px;color:#5A5854;margin-top:var(--s1);letter-spacing:.04em}
+.ficha{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.ficha h3{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.ficha p{margin:0;color:var(--hierro-muted);max-width:36em}
+dl.rotulo{display:grid;grid-template-columns:auto minmax(0,1fr);border:1.5px solid var(--hierro);margin:var(--s1) 0 0}
+.rotulo dt,.rotulo dd{margin:0;padding:10px 14px;border-bottom:1px solid var(--linea);font-size:14px}
+.rotulo dt{color:var(--hierro-muted);border-right:1px solid var(--linea);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center}
+.rotulo dd{font-variant-numeric:tabular-nums}
+.rotulo dt:nth-last-of-type(1),.rotulo dd:last-of-type{border-bottom:0}
+/* proceso */
+ol.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);counter-reset:p}
+.pasos li{counter-increment:p;display:flex;flex-direction:column;gap:var(--s1);border-top:3px solid var(--hierro);padding-top:var(--s2);min-width:0}
+.pasos li::before{content:counter(p);font-family:var(--f-display);font-weight:800;font-size:40px;line-height:1;color:var(--hormigon)}
+.pasos h3{font-size:19px;font-weight:700}
+.pasos p{margin:0;font-size:15px;color:var(--hierro-muted)}
+.firma{margin-top:var(--s4);background:var(--surface-alt);padding:var(--s3);display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--s3);align-items:center}
+.firma strong{font-family:var(--f-display);font-size:20px;font-weight:700}
+.firma p{margin:0;color:var(--hierro-muted)}
+/* contacto */
+.contacto .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:end}
+.contacto h2{font-size:clamp(36px,5.5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:.95}
+.contacto p{color:var(--hierro-muted);margin:var(--s2) 0 0;max-width:34em}
+footer{border-top:1px solid var(--linea)}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;padding-block:var(--s3);font-size:13px;color:var(--hierro-muted)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--hierro);color:var(--surface);padding:10px 16px;font-size:14px;border-radius:2px}
+@media (max-width:860px){
+  .hero .wrap,.obra,.lines,.contacto .wrap{grid-template-columns:minmax(0,1fr)}
+  .muro{max-width:420px}
+  ol.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  nav{display:none}
+}
+@media (max-width:480px){ol.pasos{grid-template-columns:minmax(0,1fr)} .firma{grid-template-columns:minmax(0,1fr)} .logo{height:44px}}
+@media (prefers-reduced-motion:no-preference){.btn,.ghost{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border:1px solid var(--hierro);color:var(--hierro);text-decoration:none;font-weight:600;border-radius:2px}
+.ghost:hover{background:var(--surface-alt)}
+.more{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:var(--hierro)}
+.more:hover{color:var(--ladrillo)}
+.copy{transition:filter .15s,border-color .15s}}
+</style>
+<style>
+/* Portfolio: índice de casos como planilla de láminas; cada caso abre su ficha técnica */
+.p-hero .wrap{padding-block:var(--s4) var(--s3);display:grid;gap:var(--s2)}
+.p-hero h1{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.03em;line-height:.95}
+.p-hero p{margin:0;color:var(--hierro-muted);max-width:40em;font-size:18px}
+.filtros{display:flex;gap:var(--s1);flex-wrap:wrap;margin-bottom:var(--s3)}
+.filtros button{font:inherit;font-size:14px;font-weight:500;border:1px solid var(--hierro);background:transparent;color:var(--hierro);padding:8px 14px;border-radius:2px;cursor:pointer;min-height:40px}
+.filtros button[aria-pressed="true"]{background:var(--hierro);color:var(--surface)}
+.indice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.caso{display:flex;flex-direction:column;gap:var(--s1);text-decoration:none;color:inherit;min-width:0}
+.caso .thumb{background:#F7F7F7;border:1px solid var(--linea);aspect-ratio:4/3;position:relative;overflow:hidden}
+.caso .thumb img{position:absolute;inset:6%;width:88%;height:88%;object-fit:contain}
+.caso h3{font-size:20px;font-weight:700}
+.caso .cod{font-variant-numeric:tabular-nums}
+.caso:hover h3{text-decoration:underline;text-underline-offset:4px}
+.detalle{display:grid;gap:var(--s3)}
+.detalle .obra{align-items:start}
+.lamina a{display:block}
+.vacio{border:1px dashed var(--linea);padding:var(--s3);color:var(--hierro-muted);display:flex;flex-direction:column;gap:var(--s1);justify-content:center;min-height:100%}
+.vacio strong{color:var(--hierro);font-family:var(--f-display);font-size:18px}
+@media (max-width:860px){.indice{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.indice{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="/" aria-label="Grupo CRDZ, inicio"><svg class="logo" viewBox="0 0 899 400" role="img" aria-label="Grupo CRDZ"><rect x="0.00" y="0.00" width="400.00" height="400.00" class="lg-ink"/><path class="lg-paper" d="M113.89458272327964 171.11918008784775Q92.44216691068814 171.11918008784775 77.46412884333822 163.67847730600295Q62.48609077598829 156.23777452415814 54.75549048316252 140.96983894582723Q47.02489019033675 125.70190336749636 47.02489019033675 102.3168374816984Q47.02489019033675 67.91566617862372 64.3221083455344 50.811713030746716Q81.61932650073206 33.70775988286971 113.89458272327964 33.70775988286971Q131.86822840409957 33.70775988286971 145.78330893118596 39.79560761347Q159.69838945827235 45.883455344070285 167.52562225475842 57.96251830161055Q175.3528550512445 70.04158125915082 175.3528550512445 88.01522693997073H141.53147877013177Q141.53147877013177 79.51156661786239 138.1493411420205 73.42371888726208Q134.76720351390924 67.3358711566618 128.67935578330895 64.05036603221085Q122.59150805270863 60.764860907759896 113.89458272327964 60.764860907759896Q103.07174231332357 60.764860907759896 96.11420204978037 65.20995607613472Q89.15666178623718 69.65505124450952 85.87115666178623 77.96544655929722Q82.58565153733528 86.27584187408493 82.58565153733528 98.06500732064423V106.76193265007322Q82.58565153733528 118.55109809663251 85.87115666178623 126.95812591508053Q89.15666178623718 135.36515373352856 96.01756954612006 139.71361639824306Q102.87847730600292 144.06207906295754 113.70131771595901 144.06207906295754Q122.97803806734993 144.06207906295754 129.4524158125915 140.96983894582723Q135.9267935578331 137.87759882869693 139.30893118594437 131.78975109809664Q142.69106881405565 125.70190336749636 142.69106881405565 117.19824304538801H175.3528550512445Q175.3528550512445 135.17188872620792 167.71888726207905 147.15431918008787Q160.0849194729136 159.1367496339678 146.26647144948754 165.12796486090778Q132.4480234260615 171.11918008784775 113.89458272327964 171.11918008784775Z"/><path class="lg-paper" d="M227.35285505124452 168.8V36.02693997071742H304.4655929721816Q319.1537335285505 36.02693997071742 329.01024890190337 41.53499267935579Q338.86676427525623 47.043045387994155 343.79502196193266 56.60966325036604Q348.7232796486091 66.17628111273793 348.7232796486091 77.96544655929722Q348.7232796486091 90.72093704245975 342.82869692532944 100.67408491947293Q336.9341142020498 110.6272327964861 326.30453879941433 116.23191800878479L352.97510980966325 168.8H314.3221083455344L292.28989751098095 122.02986822840411H261.9472913616398V168.8ZM261.9472913616398 96.32562225475843H297.701317715959Q304.85212298682285 96.32562225475843 309.2005856515374 91.59062957540264Q313.54904831625186 86.85563689604686 313.54904831625186 78.93177159590044Q313.54904831625186 73.71361639824305 311.6163982430454 70.0415812591508Q309.68374816983896 66.36954612005857 306.20497803806734 64.34026354319181Q302.72620790629577 62.31098096632505 297.701317715959 62.31098096632505H261.9472913616398Z"/><path class="lg-paper" d="M49.82723279648609 363.77979502196195V231.00673499267936H105.29428989751099Q126.93997071742314 231.00673499267936 141.91800878477306 238.15754026354318Q156.896046852123 245.30834553440704 164.7232796486091 259.8998535871157Q172.5505124450952 274.49136163982433 172.5505124450952 297.29663250366036Q172.5505124450952 319.9086383601757 164.7232796486091 334.693411420205Q156.896046852123 349.4781844802343 141.91800878477306 356.6289897510981Q126.93997071742314 363.77979502196195 105.29428989751099 363.77979502196195ZM84.42166910688141 336.72269399707176H104.9077598828697Q113.02489019033675 336.72269399707176 119.01610541727672 334.403513909224Q125.00732064421669 332.0843338213763 129.06588579795022 327.6392386530015Q133.12445095168374 323.19414348462664 135.0571010248902 316.6231332357247Q136.98975109809663 310.05212298682284 136.98975109809663 301.5484626647145V293.43133235724747Q136.98975109809663 284.73440702781846 135.0571010248902 278.16339677891654Q133.12445095168374 271.59238653001466 129.06588579795022 267.1472913616399Q125.00732064421669 262.702196193265 119.01610541727672 260.38301610541725Q113.02489019033675 258.06383601756954 104.9077598828697 258.06383601756954H84.42166910688141Z"/><path class="lg-paper" d="M230.05856515373353 363.77979502196195V350.8310395314788L295.9619326500732 258.06383601756954H234.89019033674964V231.00673499267936H348.7232796486091V243.95549048316252L282.8199121522694 336.72269399707176H350.2693997071742V363.77979502196195Z"/><path class="lg-ink" d="M536.304 295.31140625Q520.32 295.31140625 509.16 289.76740625Q498.0 284.22340625 492.24 272.84740624999995Q486.48 261.47140625 486.48 244.04740625Q486.48 218.41540625 499.368 205.67140625Q512.256 192.92740625 536.304 192.92740625Q549.696 192.92740625 560.0640000000001 197.46340625Q570.432 201.99940625 576.264 210.99940625Q582.096 219.99940625 582.096 233.39140625H556.896Q556.896 227.05540625 554.376 222.51940625Q551.856 217.98340625 547.3199999999999 215.53540625Q542.784 213.08740625000002 536.304 213.08740625000002Q528.24 213.08740625000002 523.056 216.39940625Q517.872 219.71140624999998 515.424 225.90340625Q512.976 232.09540625 512.976 240.87940625V247.35940625Q512.976 256.14340625 515.424 262.40740625Q517.872 268.67140625 522.9839999999999 271.91140625Q528.096 275.15140625 536.16 275.15140625Q543.072 275.15140625 547.896 272.84740624999995Q552.72 270.54340625 555.24 266.00740625Q557.76 261.47140625 557.76 255.13540625H582.096Q582.096 268.52740625 576.408 277.45540625Q570.72 286.38340625 560.424 290.84740625Q550.128 295.31140625 536.304 295.31140625Z M596.208 293.58340625V194.65540625H653.664Q664.608 194.65540625 671.952 198.75940624999998Q679.296 202.86340625 682.9680000000001 209.99140625Q686.64 217.11940625 686.64 225.90340625Q686.64 235.40740625 682.248 242.82340625Q677.856 250.23940625 669.936 254.41540625L689.808 293.58340625H661.008L644.592 258.73540625H621.984V293.58340625ZM621.984 239.58340625H648.624Q653.952 239.58340625 657.192 236.05540625Q660.432 232.52740625 660.432 226.62340625000002Q660.432 222.73540624999998 658.992 219.99940625Q657.552 217.26340625 654.96 215.75140625Q652.368 214.23940625 648.624 214.23940625H621.984Z M701.328 293.58340625V194.65540625H742.6560000000001Q758.784 194.65540625 769.944 199.98340625Q781.104 205.31140625 786.936 216.18340625000002Q792.768 227.05540625 792.768 244.04740625Q792.768 260.89540625 786.936 271.91140625Q781.104 282.92740625 769.944 288.25540624999996Q758.784 293.58340625 742.6560000000001 293.58340625ZM727.104 273.42340624999997H742.368Q748.416 273.42340624999997 752.8800000000001 271.69540625Q757.344 269.96740625 760.368 266.65540625Q763.392 263.34340625 764.8320000000001 258.44740625Q766.272 253.55140625 766.272 247.21540625V241.16740625Q766.272 234.68740625 764.8320000000001 229.79140625000002Q763.392 224.89540625 760.368 221.58340625Q757.344 218.27140624999998 752.8800000000001 216.54340624999998Q748.416 214.81540625 742.368 214.81540625H727.104Z M800.1120000000001 293.58340625V283.93540624999997L849.216 214.81540625H803.7120000000001V194.65540625H888.528V204.30340625000002L839.4240000000001 273.42340624999997H889.6800000000001V293.58340625Z"/><path class="lg-muted" d="M510.61828125 159.50253125Q503.6221875 159.50253125 498.34875 156.233Q493.0753125 152.96346875 490.1221875 146.934171875Q487.1690625 140.904875 487.1690625 132.64315625Q487.1690625 124.311125 490.1221875 118.281828125Q493.0753125 112.25253125 498.2784375 108.983Q503.4815625 105.71346875 510.19640625 105.71346875Q514.34484375 105.71346875 517.948359375 106.9439375Q521.551875 108.17440625 524.39953125 110.4595625Q527.2471875 112.74471875 529.128046875 115.891203125Q531.00890625 119.0376875 531.71203125 122.8345625H524.82140625Q524.0128125 120.3033125 522.676875 118.29940625Q521.3409375 116.2955 519.495234375 114.85409375Q517.64953125 113.4126875 515.32921875 112.656828125Q513.00890625 111.90096875 510.2315625 111.90096875Q505.62609375 111.90096875 501.864375 114.274015625Q498.10265625 116.6470625 495.8878125 121.270109375Q493.67296875 125.89315625 493.67296875 132.64315625Q493.67296875 139.32284375 495.905390625 143.9283125Q498.1378125 148.53378125 501.96984375 150.92440625Q505.801875 153.31503125 510.61828125 153.31503125Q515.04796875 153.31503125 518.42296875 151.434171875Q521.79796875 149.5533125 523.678828125 146.090421875Q525.5596875 142.62753125 525.5596875 137.91659375L527.56359375 138.3033125H511.989375V132.467375H532.09875V138.19784375Q532.09875 144.70175 529.32140625 149.483Q526.5440625 154.26425 521.710078125 156.883390625Q516.87609375 159.50253125 510.61828125 159.50253125Z M558.766875 158.79940625V106.41659375H576.6965625Q582.81375 106.41659375 586.768828125 108.508390625Q590.72390625 110.6001875 592.639921875 114.2564375Q594.5559375 117.9126875 594.5559375 122.58846875Q594.5559375 127.26425 592.639921875 130.8501875Q590.72390625 134.436125 586.78640625 136.457609375Q582.84890625 138.47909375 576.73171875 138.47909375H562.4934375V132.5376875H576.4153125Q580.56375 132.5376875 583.077421875 131.324796875Q585.59109375 130.11190625 586.75125 127.879484375Q587.91140625 125.6470625 587.91140625 122.58846875Q587.91140625 119.4595625 586.75125 117.156828125Q585.59109375 114.85409375 583.05984375 113.570890625Q580.52859375 112.2876875 576.345 112.2876875H565.4465625V158.79940625ZM588.860625 158.79940625 576.204375 135.2095625H583.7278125L596.595 158.79940625Z M641.4389062500001 159.64315625Q635.2514062500001 159.64315625 630.6283593750001 157.217375Q626.0053125000001 154.79159375 623.4740625000001 150.57284375Q620.9428125000001 146.35409375 620.9428125000001 140.9751875V106.41659375H627.6225000000001V140.44784375Q627.6225000000001 144.2095625 629.2924218750001 147.145109375Q630.9623437500001 150.08065625 634.0560937500001 151.76815625Q637.1498437500001 153.45565625 641.4389062500001 153.45565625Q645.7279687500001 153.45565625 648.8041406250001 151.76815625Q651.8803125000001 150.08065625 653.5326562500001 147.145109375Q655.1850000000001 144.2095625 655.1850000000001 140.44784375V106.41659375H661.8646875000001V140.9751875Q661.8646875000001 146.35409375 659.3334375000001 150.57284375Q656.8021875000001 154.79159375 652.2142968750001 157.217375Q647.6264062500001 159.64315625 641.4389062500001 159.64315625Z M690.3609375000001 158.79940625V106.41659375H708.2906250000001Q714.4078125000001 106.41659375 718.3628906250001 108.649015625Q722.3179687500001 110.8814375 724.2339843750001 114.64315625Q726.1500000000001 118.404875 726.1500000000001 123.08065625Q726.1500000000001 127.7564375 724.2339843750001 131.5533125Q722.3179687500001 135.3501875 718.3804687500001 137.6001875Q714.4429687500001 139.8501875 708.3257812500001 139.8501875H695.6343750000001V133.97909375H708.0093750000001Q712.1578125000001 133.97909375 714.6890625000001 132.555265625Q717.2203125000001 131.1314375 718.3628906250001 128.652921875Q719.5054687500001 126.17440625 719.5054687500001 123.08065625Q719.5054687500001 119.98690625 718.3628906250001 117.543546875Q717.2203125000001 115.1001875 714.6714843750001 113.6939375Q712.1226562500001 112.2876875 707.9390625000001 112.2876875H697.0406250000001V158.79940625Z M773.4196875000001 159.50253125Q766.7048437500001 159.50253125 761.4489843750001 156.250578125Q756.1931250000001 152.998625 753.1696875000001 146.969328125Q750.1462500000001 140.94003125 750.1462500000001 132.64315625Q750.1462500000001 124.311125 753.1696875000001 118.281828125Q756.1931250000001 112.25253125 761.4489843750001 108.983Q766.7048437500001 105.71346875 773.4196875000001 105.71346875Q780.1345312500001 105.71346875 785.3728125000001 108.983Q790.6110937500001 112.25253125 793.6169531250001 118.281828125Q796.6228125000001 124.311125 796.6228125000001 132.64315625Q796.6228125000001 140.94003125 793.6169531250001 146.969328125Q790.6110937500001 152.998625 785.3728125000001 156.250578125Q780.1345312500001 159.50253125 773.4196875000001 159.50253125ZM773.4196875000001 153.31503125Q778.0954687500001 153.31503125 781.8747656250001 150.941984375Q785.6540625000001 148.5689375 787.8864843750001 143.945890625Q790.1189062500001 139.32284375 790.1189062500001 132.64315625Q790.1189062500001 125.89315625 787.8864843750001 121.270109375Q785.6540625000001 116.6470625 781.8747656250001 114.274015625Q778.0954687500001 111.90096875 773.4196875000001 111.90096875Q768.7087500000001 111.90096875 764.9118750000001 114.29159375Q761.1150000000001 116.68221875 758.8825781250001 121.305265625Q756.6501562500001 125.9283125 756.6501562500001 132.64315625Q756.6501562500001 139.32284375 758.8825781250001 143.9283125Q761.1150000000001 148.53378125 764.9118750000001 150.92440625Q768.7087500000001 153.31503125 773.4196875000001 153.31503125Z"/></svg></a>
+  <nav aria-label="Secciones"><a href="/#estudio">Estudio</a><a href="/#industrial">Industrial</a><a href="/portfolio/" aria-current="page">Portfolio</a><a href="/#contacto">Contacto</a></nav>
+</div></header>
+
+<main>
+<div class="p-hero"><div class="wrap">
+  <p class="eti">Portfolio</p>
+  <h1>Trabajos</h1>
+  <p>Cada trabajo con lo que se entrega: modelo, plano y datos de fabricación u obra. Tocá uno para ver la ficha completa.</p>
+</div></div>
+
+<section style="border-top:0;padding-top:0"><div class="wrap">
+  <div class="filtros" role="group" aria-label="Filtrar por línea">
+    <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+    <button type="button" data-f="industrial" aria-pressed="false">CRDZ Industrial</button>
+    <button type="button" data-f="estudio" aria-pressed="false">CRDZ Estudio</button>
+  </div>
+  <div class="indice" id="indice">
+    <a class="caso" href="#crdz-i-001" data-linea="industrial">
+      <div class="thumb"><img src="img/crdz-i-001-render.jpg" alt="Modelo 3D del soporte angular" width="900" height="846"></div>
+      <span class="eti">CRDZ Industrial · <span class="cod">CRDZ-I-001</span></span>
+      <h3>Soporte angular 01</h3>
+    </a>
+    <div class="vacio" data-linea="estudio">
+      <strong>CRDZ Estudio</strong>
+      <span>Los primeros planos de arquitectura se suman pronto. Mientras tanto, contanos qué necesitás.</span>
+      <a class="more" href="https://wa.me/5491133872504?text=Hola%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20Quer%C3%ADa%20pedir%20un%20presupuesto." target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="crdz-i-001"><div class="wrap detalle">
+  <div class="sec-head"><div><p class="eti">CRDZ Industrial · Pieza de muestra</p><h2>Soporte angular 01</h2></div><a class="more" href="CRDZ-I-001.pdf" target="_blank" rel="noopener">Ver plano en PDF →</a></div>
+  <div class="obra">
+    <figure class="lamina">
+      <img src="img/crdz-i-001-render.jpg" alt="Modelo 3D del soporte angular: base y pared con dos agujeros cada una y un nervio triangular de refuerzo" width="900" height="846">
+      <figcaption>Modelo 3D · vista isométrica</figcaption>
+    </figure>
+    <div class="ficha">
+      <p>Escuadra de chapa plegada a 90°, con nervio central de refuerzo y cuatro agujeros de fijación. Modelada con todas sus medidas restringidas y documentada en un plano listo para llevar al taller.</p>
+      <dl class="rotulo">
+        <dt>Plano</dt><dd>CRDZ-I-001 · Rev. 0</dd>
+        <dt>Material</dt><dd>Chapa acero SAE 1010, e = 5 mm</dd>
+        <dt>Medidas</dt><dd>80 × 40 × 60 mm</dd>
+        <dt>Agujeros</dt><dd>4 × ⌀6</dd>
+        <dt>Plegado</dt><dd>R3 interior · R8 exterior</dd>
+        <dt>Nervio</dt><dd>e = 5 mm, centrado</dd>
+        <dt>Vistas</dt><dd>Frontal, superior, corte A-A, isométrica</dd>
+        <dt>Tolerancias</dt><dd>ISO 2768-m</dd>
+        <dt>Entrega</dt><dd>PDF A3 escala 1:1 · modelo STEP</dd>
+      </dl>
+    </div>
+  </div>
+  <figure class="lamina">
+    <a href="CRDZ-I-001.pdf" target="_blank" rel="noopener"><img class="plano" style="margin-top:0" src="img/crdz-i-001-plano.jpg" alt="Plano de fabricación CRDZ-I-001 con vistas, corte A-A, cotas y rótulo" width="2000" height="1414" loading="lazy"></a>
+    <figcaption>Plano de fabricación CRDZ-I-001 · tocá para abrir el PDF</figcaption>
+  </figure>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Grupo CRDZ · Caballito, CABA</span><a href="/">grupocrdz.com.ar</a></div></footer>
+<script>
+document.querySelector(".filtros").addEventListener("click",e=>{
+  const b=e.target.closest("[data-f]");if(!b)return;const f=b.dataset.f;
+  document.querySelectorAll(".filtros button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  document.querySelectorAll("#indice [data-linea]").forEach(c=>c.hidden=!(f==="todos"||c.dataset.linea===f));
+});
+</script>
+</body>
+</html>
